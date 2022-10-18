@@ -1,5 +1,5 @@
 let peticiona = async () => {
-const result = await fetch("https://accounts.spotify.com/api/token", {
+	const result = await fetch("https://accounts.spotify.com/api/token", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/x-www-form-urlencoded",
@@ -7,7 +7,6 @@ const result = await fetch("https://accounts.spotify.com/api/token", {
 		},
 		body: "grant_type=client_credentials",
 	});
-
 };
 
 const clientId = "1c8d48768e3440f3a3fe0567235964d7";
@@ -58,7 +57,7 @@ let getArtist = async (token, name_song) => {
 };
 
 let pinta = (data) => {
-	console.log( data.tracks.items[0].preview_url);
+	console.log(data.tracks.items[0].preview_url);
 	containerData.innerHTML = "";
 	let column = document.createElement("div");
 
@@ -91,8 +90,5 @@ let inicializa = () => {
 	btn_submit.onclick = () => _getToken(input_song.value);
 };
 
-let main = () => {
-	inicializa();
-};
-
+inicializa();
 main();
